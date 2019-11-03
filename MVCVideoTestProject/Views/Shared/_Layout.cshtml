@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MVC Test project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="View a number of videos, from a server" name="description" />
+    <meta content="" name="Krystal Randall" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <environment include="Development">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/app.css" rel="stylesheet" type="text/css" />
+    </environment>
+    <environment exclude="Development">
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+        <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    </environment>
+
+</head>
+
+<body class="authentication-bg-pattern">
+
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="index.html" class="logo text-center">
+                        <span class="logo-lg">
+                            <img src="~/assets/images/rainbowBrite-logo.jpg" alt="" height="50">
+                        </span>
+                        <span class="logo-sm">
+                            <img src="~/assets/images/rainbowBrite-logo.jpg" alt="" height="24">
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <environment include="Development">
+        <script src="/assets/js/vendor.js"></script>
+        <script src="/assets/js/app.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="/assets/js/vendor.min.js"></script>
+        <script src="/assets/js/app.min.js"></script>
+    </environment>
+</body>
+</html>
+
+@RenderSection("Scripts", required: false)

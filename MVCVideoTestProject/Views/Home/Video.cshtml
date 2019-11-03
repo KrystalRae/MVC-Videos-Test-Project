@@ -1,0 +1,46 @@
+﻿@model SelectedVideoModel
+
+
+<div class="wrapper">
+    <div class="container-fluid">
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-box">
+                <h4>@Model.Title</h4>
+                <p class="sub-header">@Model.Description</p>
+                <div class="embed-responsive embed-responsive-21by9 video-detail">
+                    <video controls>
+                        <source src="@Model.Url" type="video/mp4">
+                    </video>
+                </div>
+            </div> <!-- end col -->
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card-box">
+                <div>
+                    <h5>Comments</h5>
+                </div>
+                @foreach (CommentModel comment in Model.Comments)
+                {
+                    <div class="border border-light p-2 mb-3">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="m-0">@comment.CommentName</h5>
+                            </div>
+                        </div>
+                        <p>@comment.Body</p>
+                        <p class="card-text">
+                            <small class="text-muted">@comment.Date.ToString("dd-MMM-yyyy hh:mm:ss")</small>
+                        </p>
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

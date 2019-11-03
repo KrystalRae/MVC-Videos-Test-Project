@@ -1,0 +1,61 @@
+﻿@model List<VideoModel>
+
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card-deck-wrapper">
+                    <div class="card-deck">
+
+                        @foreach (var video in Model)
+                        {
+                            <div class="card">
+                                <div class="index-cb card-body d-flex flex-column">
+                                    <a href="@Url.Action("Video", "Home", new { id = video.Id })">
+                                        <div class="embed-responsive embed-responsive-21by9 mb-2">
+                                            <video controls>
+                                                <source src="@video.Url" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </a>
+                                    <a href="@Url.Action("Video", "Home", new { id = video.Id })">
+                                        <h5 class="card-title hover-underline">@video.Title</h5>
+                                        <p class="card-text color">Uploaded by: @video.Uploader</p>
+           
+                                        <p class="card-text color">
+                                            @video.Description
+                                        </p>
+                                        <p class="card-text mb-2">
+                                            <small class="text-muted">@video.UploadedAt.ToString("dd-MMM-yyyy hh:mm:ss")</small>
+                                        </p>
+                                    </a>                   
+                                    <a href="@Url.Action("Video", "Home", new { id = video.Id })" type="button" class="mt-auto btn button-hover button-orange waves-effect waves-light ">View</a>
+                                   
+                                </div>
+
+                            </div>
+                        }
+
+                    </div> <!-- end card-deck-->
+                </div> <!-- end card-deck-wrapper-->
+            </div> <!-- end col-->
+        </div>
+
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        2019 &copy; <a href="">Krystal Randall</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+    <!-- /Right-bar -->
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+</div>
